@@ -7,6 +7,12 @@ public class GameTimeDebugger : MonoBehaviour
 {
 
     private Text debugText;
+    private float trackTime;
+
+    private void OnEnable()
+    {
+        trackTime = 0;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +23,7 @@ public class GameTimeDebugger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        debugText.text = Time.time.ToString();
+        trackTime += Time.deltaTime;
+        debugText.text = trackTime.ToString();
     }
 }
