@@ -13,11 +13,12 @@ public class AudioLoader : MonoBehaviour
     public Transform songListItem;
     public Transform songListContainer;
 
-    public GameObject debugCanvas;
+    public GameObject debugCanvas, menuCanvas;
     // Start is called before the first frame update
     void Start()
     {
         sAudio = transform.GetComponent<AudioSource>();
+        menuCanvas.GetComponent<CanvasGroup>().alpha = 1;
         PopulateMenu();
     }
 
